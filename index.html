@@ -1,158 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Profissional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos globais */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #a9aeb2;
-            color: #333;
-        }
+    <title>Loja de Carros Multimarcas</title>
+    <link rel="stylesheet" href="styles.css">
 
-        header {
-            background-color: #1a73e8;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            background-color: #fffdfd;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            color: #1a73e8;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            flex: 1;
-            min-width: 100px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #e8f0fe;
-            color: #174ea6;
-        }
-
-        main {
-            flex: 1;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            border-bottom: 2px solid #1a73e8;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        section p {
-            line-height: 1.6;
-        }
-
-        footer {
-            background-color: #1a73e8;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilos responsivos */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px;
-            }
-
-            nav a {
-                padding: 12px 0;
-                flex: 1 0 100%;
-            }
-
-            main {
-                margin: 10px;
-                padding: 15px;
-            }
-
-            footer {
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.4rem;
-            }
-
-            nav a {
-                padding: 10px 0;
-                font-size: 0.9rem;
-            }
-
-            main {
-                padding: 10px;
-            }
-
-            section h2 {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
 </head>
+
+<!-- Botão Flutuante de WhatsApp -->
+<a href="https://wa.me/5511999999999?text=Olá, tenho interesse em saber mais sobre os carros disponíveis!" class="whatsapp-button" target="_blank">
+    <img src="./assets/WhatsApp.svg.png" alt="WhatsApp" />
+</a>
+
+
 <body>
+    <!-- Header: Título da loja e menu de navegação -->
     <header>
-        <h1>Bem-vindo ao Meu Projeto Profissional</h1>
+        <h1>Loja de Carros Multimarcas</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#cars">Carros</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#home">Início</a>
-        <a href="#about">Sobre</a>
-        <a href="#contact">Contato</a>
-    </nav>
+    <!-- Seção de Carrossel: Destaques de vendas com imagens/vídeos -->
+    <section id="home" class="carousel">
+        <div class="carousel-item">
+            <img src="./assets/dicas-comprar-toyota-novo-curitiba.jpg" alt="Carro 1">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/lamborghini-huracan-Alexander-Migl-wikimedia-commons-960x540.jpg" alt="Carro 2">
+        </div>
+        <div class="carousel-item">
+            <video src="./assets/Vídeo comercial concessionária - CarHouse Toyota, Lexus e Hyundai.mp4" controls></video>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </section>
 
-    <main>
-        <section id="home">
-            <h2>Início</h2>
-            <p>Este é o conteúdo da página inicial. Aqui você pode adicionar uma breve introdução ou boas-vindas aos visitantes.</p>
-        </section>
+    <!-- Seção de Listagem de Carros -->
+    <section id="cars">
+        <h2>Nosso Catálogo de Carros</h2>
+        <div class="car-list">
+            <!-- Card de cada carro -->
+            <div class="car-card">
+                <img src="./assets/bmw-x5-30d.png" alt="Carro 3">
+                <h3>BMW-x5-30d</h3>
+                <p>R$ 200.000,00</p>
+                <button onclick="alert('Veja mais sobre Carro 3')">Ver Mais</button>
+            </div>
+            <div class="car-card">
+                <img src="./assets/P90489766_highRes_the-new-bmw-x5-xdriv.png" alt="Carro 4">
+                <h3>BMW-x5-xdriv</h3>
+                <p>R$ 350.000,00</p>
+                <button onclick="alert('Veja mais sobre Carro 4')">Ver Mais</button>
+            </div>
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>Sobre</h2>
-            <p>Aqui você pode falar sobre o propósito do seu site ou fornecer mais informações sobre você ou sua empresa.</p>
-        </section>
+    <!-- Seção de Contato -->
+    <section id="contact">
+        <h2>Entre em Contato</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
-        <section id="contact">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco através do e-mail: exemplo@dominio.com</p>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Meu Projeto Profissional. Todos os direitos reservados.</p>
+        <p>&copy; 2020 Loja de Carros Multimarcas. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
 </body>
+
 </html>
